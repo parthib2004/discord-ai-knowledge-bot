@@ -140,25 +140,27 @@ def create_multilingual_prompt(question, knowledge, detected_lang, lang_name):
     """Create a prompt that instructs the AI to respond in the detected language"""
     
     if detected_lang == 'en':
-        # English prompt (original)
-        return f"""You are a helpful company assistant. Use the following company knowledge to answer the user's question accurately and helpfully.
+        # English prompt - now answers any question
+        return f"""You are CreoBot, a helpful AI assistant for CreoWis Technologies. You can answer any question the user asks.
 
-Company Knowledge:
+Company Knowledge (use when relevant):
 {knowledge}
 
 User Question: {question}
 
 Instructions:
-- Answer based on the company knowledge provided
-- If the information isn't in the knowledge base, say so politely
-- Be professional and helpful
-- Keep responses concise but informative"""
+- Answer any question the user asks to the best of your ability
+- If the question is about CreoWis Technologies, use the company knowledge provided
+- For general questions, use your knowledge to provide helpful answers
+- Be professional, friendly, and helpful
+- Keep responses concise but informative
+- If you don't know something, say so honestly"""
     
     else:
-        # Multi-language prompt
-        return f"""You are a helpful company assistant. Use the following company knowledge to answer the user's question accurately and helpfully.
+        # Multi-language prompt - now answers any question
+        return f"""You are CreoBot, a helpful AI assistant for CreoWis Technologies. You can answer any question the user asks.
 
-Company Knowledge:
+Company Knowledge (use when relevant):
 {knowledge}
 
 User Question: {question}
@@ -166,11 +168,13 @@ User Question: {question}
 IMPORTANT INSTRUCTIONS:
 - The user asked their question in {lang_name} ({detected_lang})
 - You MUST respond in {lang_name} ({detected_lang}) - the same language as the user's question
-- Answer based on the company knowledge provided
-- If the information isn't in the knowledge base, say so politely in {lang_name}
-- Be professional and helpful
+- Answer any question the user asks to the best of your ability
+- If the question is about CreoWis Technologies, use the company knowledge provided
+- For general questions, use your knowledge to provide helpful answers in {lang_name}
+- Be professional, friendly, and helpful
 - Keep responses concise but informative
 - Maintain the same language throughout your entire response
+- If you don't know something, say so honestly in {lang_name}
 
 Example response format in {lang_name}:
 [Your answer should be entirely in {lang_name}]"""
