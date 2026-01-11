@@ -5,9 +5,11 @@ A Discord bot that answers company-related questions using Google's Gemini AI an
 ## Features
 
 - 🤖 AI-powered responses using Google Gemini
+- 🌍 **Multi-language support** - Ask in any language, get responses in the same language
 - 📚 Custom knowledge base integration
 - ⚡ Fast slash command interface
 - 🔒 Secure environment variable configuration
+- 🎯 Automatic language detection (70+ languages supported)
 
 ## Setup
 
@@ -73,10 +75,28 @@ This bot is ready for deployment on platforms like Railway, Render, or Heroku.
 
 ## Usage
 
+### Basic Commands
 Use the `/ask` command in Discord:
 ```
 /ask What are the company office hours?
 ```
+
+### Multi-Language Support 🌍
+Ask questions in **any language** and get responses in the same language:
+
+```
+/ask ¿Cuáles son las horas de oficina?          (Spanish)
+/ask Quelles sont les heures de bureau?        (French) 
+/ask Wie sind die Bürozeiten?                  (German)
+/ask オフィスの営業時間は何時ですか？                (Japanese)
+/ask Каковы часы работы офиса?                  (Russian)
+```
+
+### View Supported Languages
+```
+/languages
+```
+Shows all 70+ supported languages with flags and codes.
 
 ## Files
 
