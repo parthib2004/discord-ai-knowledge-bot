@@ -1,0 +1,80 @@
+Company Name: CreoWis Technologies
+
+About the Company:
+CreoWis Technologies is a software development company that builds modern web applications,
+internal platforms, and client-facing solutions. The company focuses on high-quality UI,
+scalable architecture, clean code, and real-world problem solving.
+
+--------------------------------------------------
+
+Core Technology Stack:
+- Frontend: React, Next.js
+- Backend: Node.js, Python
+- CMS: Headless CMS solutions
+- Databases: PostgreSQL, MongoDB
+- DevOps & CI/CD: Docker, GitHub Actions
+- Version Control: GitHub, Bitbucket
+- Email & Automation Tools
+
+--------------------------------------------------
+
+Engineering & Development Process:
+- Development follows an issue-based workflow
+- All work is done on feature branches
+- Pull Requests (PRs) are mandatory before merging
+- PRs must include:
+  - Clear description of changes
+  - Screenshots for UI-related work
+- Code reviews are required for quality and consistency
+- Emphasis on clean, readable, and maintainable code
+
+--------------------------------------------------
+
+Internship & Onboarding Practices:
+Interns at CreoWis work on real production-level code under guidance.
+They are expected to:
+- Pick up assigned issues or feature requests
+- Create feature branches for work
+- Follow company coding standards
+- Raise Pull Requests for review
+- Address feedback and make improvements
+- Communicate actively with the team
+
+Interns are encouraged to ask doubts in the #dev-help channel and collaborate openly.
+
+--------------------------------------------------
+
+Frontend Development Practices:
+- Component-based development using React
+- Focus on reusable and maintainable components
+- Responsive design for desktop and mobile
+- UI updates based on design mockups
+- Attention to spacing, typography, and layout consistency
+- Fixing hydration issues, console warnings, and UI bugs
+
+--------------------------------------------------
+
+Backend & Integration Practices:
+- Integration of frontend with backend APIs
+- Handling forms, validations, and workflows
+- Automated email handling and notifications
+- Secure and structured API usage
+- Error handling and debugging
+
+--------------------------------------------------
+
+Quality, Debugging & Optimization:
+- Fixing console warnings and runtime errors
+- Improving build stability
+- SEO and meta tag optimization
+- Performance improvements where required
+- Ensuring consistent behavior across devices
+
+--------------------------------------------------
+
+Engineering Culture:
+- Strong focus on learning and mentorship
+- Interns are treated as contributors, not observers
+- Feedback-driven development
+- Continuous improvement mindset
+- Emphasis on collaboration and knowledge sharing
