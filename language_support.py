@@ -81,11 +81,59 @@ LANGUAGE_NAMES = {
 }
 
 def detect_language(text):
-    """Detect the language of the input text"""
+    """Detect the language of the input text with improved English detection"""
     try:
-        detected_lang = detect(text)
+        # Common English greetings and phrases that should always be treated as English
+        english_greetings = [
+            'hi', 'hello', 'hey', 'help', 'thanks', 'thank you', 'yes', 'no', 
+            'ok', 'okay', 'sure', 'please', 'sorry', 'excuse me', 'good morning',
+            'good afternoon', 'good evening', 'good night', 'goodbye', 'bye',
+            'how are you', 'nice to meet you', 'see you later'
+        ]
+        
+        text_lower = text.lower().strip()
+        
+        # Check if the text is a common English greeting/phrase
+        if text_lower in english_greetings:
+            return 'en', 'English'
+        
+        # Check if text starts with common English greetings
+        for greeting in english_greetings:
+            if text_lower.startswith(greeting):
+                return 'en', 'English'
+        
+        from langdetect import detect_langs
+        
+        # Get confidence scores for all detected languages
+        lang_probs = detect_langs(text)
+        
+        # Get the most likely language
+        detected_lang = lang_probs[0].lang
+        confidence = lang_probs[0].prob
+        
+        # If confidence is low (< 0.7) or text is very short, default to English
+        if confidence < 0.7 or len(text.split()) < 3:
+            # Check if English is in the top 2 detected languages
+            for lang_prob in lang_probs[:2]:
+                if lang_prob.lang == 'en':
+                    return 'en', 'English'
+            
+            # If no English detected but confidence is low, still default to English
+            if confidence < 0.5:
+                return 'en', 'English'
+        
+        # Additional check: if detected as Finnish but contains common English words
+        if detected_lang == 'fi':
+            english_indicators = ['the', 'and', 'or', 'is', 'are', 'was', 'were', 'have', 'has', 'had', 'will', 'would', 'can', 'could', 'should', 'what', 'how', 'when', 'where', 'why', 'who']
+            english_word_count = sum(1 for word in english_indicators if word in text_lower)
+            
+            if english_word_count >= 2:  # If 2+ common English words found
+                return 'en', 'English'
+        
         return detected_lang, LANGUAGE_NAMES.get(detected_lang, detected_lang)
-    except:
+        
+    except Exception as e:
+        print(f"Language detection error: {e}")
         return 'en', 'English'  # Default to English if detection fails
 
 def create_multilingual_prompt(question, knowledge, detected_lang, lang_name):

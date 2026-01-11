@@ -41,3 +41,5 @@ Thumbs.db
 # Test files
 test_gemini.py
 test_language.py
+test_english_detection.py
+test_multilingual.py

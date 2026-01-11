@@ -75,28 +75,28 @@ This bot is ready for deployment on platforms like Railway, Render, or Heroku.
 
 ## Usage
 
-### Basic Commands
-Use the `/ask` command in Discord:
-```
-/ask What are the company office hours?
-```
+### 🤖 **Available Commands**
 
-### Multi-Language Support 🌍
+#### **Main Commands**
+- **`/ask [question]`** - Ask company questions in any language
+- **`/help`** - Show all commands and bot features  
+- **`/languages`** - View all 70+ supported languages
+- **`/info`** - Get bot information and technical details
+- **`/stats`** - View bot performance statistics
+
+#### **Multi-Language Examples**
 Ask questions in **any language** and get responses in the same language:
 
 ```
+/ask What are the company office hours?          (English)
 /ask ¿Cuáles son las horas de oficina?          (Spanish)
 /ask Quelles sont les heures de bureau?        (French) 
 /ask Wie sind die Bürozeiten?                  (German)
 /ask オフィスの営業時間は何時ですか？                (Japanese)
 /ask Каковы часы работы офиса?                  (Russian)
+/ask कार्यालय के घंटे क्या हैं?                    (Hindi)
+/ask 办公时间是什么时候？                          (Chinese)
 ```
-
-### View Supported Languages
-```
-/languages
-```
-Shows all 70+ supported languages with flags and codes.
 
 ## Files
 
